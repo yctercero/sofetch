@@ -11,6 +11,7 @@ footer, header, hgroup, menu, nav, section {
 body {
   line-height: 1;
   font-family: 'Open Sans', sans-serif;
+  color: #333;
 }
 ol, ul {
   list-style: none;
@@ -24,8 +25,10 @@ a{
   content: "";
   height: 0;
 }
-h1{
+h1, h2, h3, h4, h5{
   font-family: 'Oswald', sans-serif;
+}
+h1{
   font-size: 38px;
   text-transform: uppercase;
   font-weight: 600;
@@ -37,7 +40,6 @@ h1 span{
   color: #DB4C4D;
 }
 h3{
-  font-family: 'Oswald', sans-serif;
   color: #00A388;
   font-size: 36px;
   text-align: center;
@@ -52,9 +54,28 @@ header nav, h1{
   float: left;
   width: 50%;
 }
+header nav > ul{
+  float: right;
+  padding-top: 15px;
+}
+header nav > ul > li{
+  font-size: 22px;
+  width: 150px;
+  text-align: center;
+}
 header nav ul li{
   float: left;
   color: white;
+  position: relative;
+}
+header nav > ul > li:first-of-type{
+  padding: 10px;
+  background-color: #00A388;
+  border-radius: 10px;
+  margin-right: 25px;
+}
+main{
+  background-color: #eee;
 }
 #signup, #login{
   background-image: url(/../assets/signupbg.jpeg);
@@ -101,4 +122,82 @@ header nav ul li{
 }
 #signupView p a, #loginView p a{
   text-decoration: underline;
+}
+.innerWrapper{
+  width: 50%;
+  margin: 0 auto;
+}
+.timelineLog{
+  width: 85%;
+  margin: 10px auto 35px;
+  border-radius: 10px;
+}
+.timelineLog > div{
+  float: left;
+}
+.timelineLog > div:first-of-type{
+  width: 100px;
+}
+.timelineLog > div:nth-of-type(2){
+  width: 300px;
+  font-weight: lighter;
+}
+.timelineLog h4{
+  font-size: 28px;
+  margin: 5px 0;
+}
+.timelineLog h6{
+  font-size: 15px;
+  margin: 8px 0;
+  font-weight: lighter;
+  font-family: 'Open Sans', sans-serif;
+}
+.timelineLog p{
+  font-size: 20px;
+}
+.timelineLog img{
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+}
+.time{
+  width: 100px;
+  padding-top: 10px;
+}
+.time p:first-of-type{
+  font-size: 28px;
+}
+.time p{
+  font-size: 42px;
+  text-align: center;
+}
+.amPM{
+  letter-spacing: 2px;
+}
+#logMenu{
+  width: 200px;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 10px;
+  height: 200px;
+  display: none;
+}
+header nav > ul > li:first-of-type:hover #logMenu{
+  display: block;
+      top: 42px;
+    left: -24px;
+}
+#logMenu li{
+  width: 50%;
+  text-align: center;
+}
+#logMenu i{
+  color: #00A388;
+  font-size: 32px;
+  padding: 10px 5px 5px;
+}
+#logMenu h6{
+  color: #333;
+  font-size: 18px;
+  font-weight: lighter;
 }
