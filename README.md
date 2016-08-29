@@ -1,4 +1,4 @@
-# sofetch
+# SoFetch
   > Coordinate your pet's care with your family/friends - no more guessing when they were fed, went out, or given meds.
 
 ## Summary ##
