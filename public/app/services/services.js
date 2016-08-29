@@ -33,12 +33,23 @@ angular.module('app.services', [])
   var log = function(log){
     return $http({
       method: 'POST',
-      url: '/log/walk',
+      url: '/logWalk',
       data: log
     })
   };
 
+  var getLogs = function(){
+    return $http({
+      method: 'GET',
+      url: '/home'
+    })
+    .then(function (response) {
+      return response.data;
+    });
+  };
+
   return {
-    log: log
+    log: log,
+    getLogs: getLogs
   }
 })

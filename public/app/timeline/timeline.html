@@ -1,31 +1,16 @@
 <div class="innerWrapper">
-  <div class="timelineLog food clearfix">
+  <div class="timelineLog food clearfix" ng-repeat="item in data.logs">
     <div>
       <img src="http://blogs-images.forbes.com/kristintablang/files/2016/02/Uber-Puppies.jpg" alt="">
     </div>
     <div>
-      <h4>Roo <i class="fa fa-cutlery" aria-hidden="true"></i></h4>
+      <h4>{{item.petname}} <i class="fa fa-cutlery" aria-hidden="true"></i></h4>
       <p> Roo ate.</p>
       <!-- <p>Notes: Puppy kitty ipsum dolor sit good dog puppy. Window feathers treats tooth dragging shake Scooby snacks chow carrier tabby left paw barky litter box pet supplies heel nap run.</p> -->
-      <h6>Posted By: Yara</h6>
+      <h6>Posted By: {{item.user}}</h6>
     </div>
     <div class="time">
-      <p>12:00</p>
-      <p class="amPM">PM</p>
-    </div>
-  </div>
-  <div class="timelineLog food clearfix">
-    <div>
-      <img src="http://blogs-images.forbes.com/kristintablang/files/2016/02/Uber-Puppies.jpg" alt="">
-    </div>
-    <div>
-      <h4>Roo <i class="fa fa-cutlery" aria-hidden="true"></i></h4>
-      <p> Roo ate.</p>
-      <!-- <p>Notes: Puppy kitty ipsum dolor sit good dog puppy. Window feathers treats tooth dragging shake Scooby snacks chow carrier tabby left paw barky litter box pet supplies heel nap run.</p> -->
-      <h6>Posted By: Yara</h6>
-    </div>
-    <div class="time">
-      <p>12:00</p>
+      <p>{{item.time}}</p>
       <p class="amPM">PM</p>
     </div>
   </div>
