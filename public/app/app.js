@@ -1,5 +1,8 @@
 angular.module('app', [
-
+  'ui.router',
+  'app.auth',
+  'app.services',
+  'app.timeline'
 ])
 .config(function($stateProvider, $urlRouterProvider){
   $urlRouterProvider.otherwise('/signup');
