@@ -26,6 +26,19 @@ angular.module('app.services', [])
   return {
     signup: signup,
     login: login,
-    user: user
+    user: userData
   };
+})
+.factory('Log', function($http, $location){
+  var log = function(log){
+    return $http({
+      method: 'POST',
+      url: '/log/walk',
+      data: log
+    })
+  };
+
+  return {
+    log: log
+  }
 })

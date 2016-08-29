@@ -2,7 +2,8 @@ angular.module('app', [
   'ui.router',
   'app.auth',
   'app.services',
-  'app.timeline'
+  'app.timeline',
+  'app.log'
 ])
 .config(function($stateProvider, $urlRouterProvider){
   $urlRouterProvider.otherwise('/signup');
@@ -22,6 +23,11 @@ angular.module('app', [
     url: '/login',
     templateUrl: 'app/auth/login.html',
     controller: 'AuthController'
+  })
+  .state('logWalk', {
+    url: '/logWalk',
+    templateUrl: 'app/logs/logWalk.html',
+    controller: 'LogController'
   });
 
 });

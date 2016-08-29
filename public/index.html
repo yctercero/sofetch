@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="app/styles/style.css">
     <link href="https://fonts.googleapis.com/css?family=Oswald:300,400" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
-    <link rel="stylesheet" href="app/styles/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="app/styles/font-awesome-4.6.3/css/font-awesome.min.css">
 
   </head>
   <body>
@@ -15,11 +15,27 @@
       <nav>
         <ul class="clearfix">
           <li>Log
-            <ul>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
+            <ul id="logMenu">
+              <li>
+                <a href="#/logWalk">
+                  <i class="fa fa-map-marker" aria-hidden="true"></i>
+                  <h6>Walk</h6>
+                </a>
+              </li>
+              <li>
+                <i class="fa fa-cutlery" aria-hidden="true"></i>
+                <h6>Meal</h6>
+              </li>
+              <li>
+                <i class="fa fa-heartbeat" aria-hidden="true"></i>
+                <h6>Meds</h6>
+              </li>
+              <li>
+                <a href="">
+                  <i class="fa fa-asterisk" aria-hidden="true"></i>
+                  <h6>Random</h6>
+                </a>
+              </li>
             </ul>
           </li>
           <li>Hey, username</li>
@@ -37,6 +53,7 @@
     <script src="app/auth/auth.js"></script>
     <script src="app/services/services.js"></script>
     <script src="app/timeline/timeline.js"></script>
+    <script src="app/logs/log.js"></script>
     <script src="app/app.js"></script>
   </body>
 </html>
