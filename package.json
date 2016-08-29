@@ -1,0 +1,18 @@
+{
+  "name": "SoFetch",
+  "version": "1.0.0",
+  "description": "Coordinate your pet's care",
+  "author": "Yara Tercero-Parker",
+  "main": "server.js",
+  "scripts": {},
+  "license": "UNLICENSED",
+  "devDependencies": {},
+  "dependencies": {
+    "angular-ui-router": "^0.3.1",
+    "bluebird": "^3.4.3",
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "mongoose": "^4.5.10",
+    "path": "^0.12.7"
+  }
+}
