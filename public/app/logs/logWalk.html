@@ -1,0 +1,12 @@
+<div class="logFormContainer">
+  <h3>Log Walk</h3>
+  <form name="logWalkForm" ng-submit='logThis()'>
+    <input name="petname" ng-model='log.petname' type="text" placeholder="Pet Name">
+    <input name="time" ng-model='log.time' type="text" placeholder="Time of walk...">
+    <input type="checkbox" name="poo" value="Poo" ng-model='log.poo'>Poo
+    <input type="checkbox" name="pee" value="Pee" ng-model='log.pee'>Pee
+    <input name="notes" ng-model='log.notes' type="text" placeholder="Notes...">
+    <input name="person" ng-model='log.user' type="text" placeholder="Person logging...">
+    <button>Log</button>
+  </form>
+</div>
