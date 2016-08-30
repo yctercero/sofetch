@@ -55,7 +55,4 @@ angular.module('app', [
     controller: 'LogController'
   });
 
-})
-.run(function ($window) {
-  $window.localStorage.setItem('logToPopulate', null);
 });

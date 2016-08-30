@@ -60,22 +60,23 @@ module.exports = {
     Log.findById(req.body.id, function(err, log){
       if(err){
         res.send(err)
-      }
-      log.petname = req.body.petname;
-      log.time = req.body.time;
-      log.poop = req.body.poo;
-      log.pee = req.body.pee;
-      log.notes = req.body.notes;
-      log.user = req.body.user;
-      log.dosage = req.body.dosage;
-      log.medsGiven = req.body.medsGiven;
+      }else{
+        log.petname = req.body.petname;
+        log.time = req.body.time;
+        log.poop = req.body.poo;
+        log.pee = req.body.pee;
+        log.notes = req.body.notes;
+        log.user = req.body.user;
+        log.dosage = req.body.dosage;
+        log.medsGiven = req.body.medsGiven;
 
-      log.save(function(err){
-        if(err){
-          res.send(err);
-        }
-        res.json({message: 'Log updated!'});
-      })
+        log.save(function(err){
+          if(err){
+            res.send(err);
+          }
+          res.json({message: 'Log updated!'});
+        })
+      }
     })
   },
 
