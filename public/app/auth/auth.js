@@ -13,6 +13,10 @@ angular.module('app.auth', [])
     $scope.username = $window.localStorage.getItem('currentUser');
   });
 
+  $scope.clear = function(){
+    $window.localStorage.setItem('logToPopulate', null);
+  };
+
   $scope.signup = function(){
     Auth.signup($scope.user)
       .then(function(){

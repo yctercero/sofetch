@@ -7,7 +7,6 @@ angular.module('app.log', [])
   $scope.log = {};
 
   if($window.localStorage.getItem('logToPopulate') !== null){
-    var logToPopulate = $window.localStorage.getItem('logToPopulate');
     Log.getLog(logToPopulate)
       .then(function(data){
         $scope.logInfoToPop = data;

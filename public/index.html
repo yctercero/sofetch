@@ -14,7 +14,7 @@
   <body>
     <header class="clearfix" ng-controller="AuthController">
       <h1 ng-hide="currentPath === '/signup' || currentPath === '/login'">
-        <a href="'#/home">
+        <a href="'#/home" ng-click="clear()">
           So<span>Fetch</span>
         </a>
       </h1>
@@ -26,25 +26,25 @@
           <li>Log
             <ul id="logMenu">
               <li>
-                <a href="#/logWalk">
+                <a href="#/logWalk" ng-click='clear()'>
                   <i class="fa fa-map-marker" aria-hidden="true"></i>
                   <h6>Walk</h6>
                 </a>
               </li>
               <li>
-                <a href="#/logMeal">
+                <a href="#/logMeal" ng-click='clear()'>
                   <i class="fa fa-cutlery" aria-hidden="true"></i>
                   <h6>Meal</h6>
                 </a>
               </li>
               <li>
-                <a href="#/logMeds">
+                <a href="#/logMeds" ng-click='clear()'>
                   <i class="fa fa-heartbeat" aria-hidden="true"></i>
                   <h6>Meds</h6>
                 </a>
               </li>
               <li>
-                <a href="">
+                <a href="" ng-click='clear()'>
                   <i class="fa fa-asterisk" aria-hidden="true"></i>
                   <h6>Random</h6>
                 </a>
@@ -52,7 +52,7 @@
             </ul>
           </li>
           <li>
-            <a href="#/home">
+            <a href="#/home" ng-click='clear()'>
               <i class="fa fa-home" aria-hidden="true"></i> Home
             </a>
           </li>
