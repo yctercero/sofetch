@@ -19,7 +19,8 @@
       <input name="dosage" ng-model='log.dosage' type="text" placeholder="Dosage...">
       <input name="notes" ng-model='log.notes' type="text" placeholder="Notes...">
       <input name="person" ng-model='log.user' type="text" placeholder="Person logging...">
-      <button>Log</button>
+      <button>Update Log</button>
+      <div class="deleteBtn" ng-click="deleteLog(logInfoToPop._id)">Delete</div>
     </form>
   </div>
 </div>
