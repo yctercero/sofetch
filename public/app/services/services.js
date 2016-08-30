@@ -48,8 +48,21 @@ angular.module('app.services', [])
     });
   };
 
+  var getLog = function(data){
+    console.log(data);
+    return $http({
+      method: 'GET',
+      url: '/logWalk',
+      data: data
+    })
+    .then(function(response){
+      return response.data;
+    })
+  };
+
   return {
     log: log,
-    getLogs: getLogs
+    getLogs: getLogs,
+    getLog: getLog
   }
 })

@@ -1,17 +1,27 @@
 <div class="innerWrapper">
-  <div class="timelineLog food clearfix" ng-repeat="item in data.logs">
+  <div class="timelineLog food clearfix" ng-repeat="(index, item) in data.logs">
     <div>
       <img src="http://blogs-images.forbes.com/kristintablang/files/2016/02/Uber-Puppies.jpg" alt="">
     </div>
     <div>
-      <h4>{{item.petname}} <i class="fa fa-cutlery" aria-hidden="true"></i></h4>
-      <p> Roo ate.</p>
-      <!-- <p>Notes: Puppy kitty ipsum dolor sit good dog puppy. Window feathers treats tooth dragging shake Scooby snacks chow carrier tabby left paw barky litter box pet supplies heel nap run.</p> -->
+      <h4><span editable-text="item.petname">{{item.petname || "Enter Name"}}</span> <i class="fa fa-map-marker" aria-hidden="true"></i>
+      </h4>
+      <p>
+        {{item.petname}} went out and did:
+        <span class="icon" ng-if="item.pee === true"><img src="assets/pee.png" alt=""></span>
+        <span class="icon" ng-if="item.poop === true"><img src="assets/poo.png" alt=""></span>
+      </p>
+      <p ng-if="showDetails===true">Notes: {{item.notes}}</p>
       <h6>Posted By: {{item.user}}</h6>
     </div>
     <div class="time">
       <p>{{item.time}}</p>
       <p class="amPM">PM</p>
     </div>
+    <div class="aside">
+      <p><i class="fa fa-pencil-square-o" aria-hidden="true" ng-click="getLog($index)"></i></p>
+      <p ng-if="item.notes.length"><i class="fa fa-angle-down" aria-hidden="true" ng-click="toggle()"></i></p>
+    </div>
+
   </div>
 </div>
