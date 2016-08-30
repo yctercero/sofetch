@@ -116,7 +116,7 @@ main{
   box-shadow: 1px -1px 1px 1px #ccc;
   border-radius: 8px;
 }
-.checkboxes{
+.checkboxes, .deleteBtn{
   width: 350px;
   margin: 0 auto;
 }
@@ -125,11 +125,16 @@ main{
   width: 30px;
   box-shadow: none;
 }
-
+.deleteBtn{
+  padding: 10px;
+  background-color: #DB4C4D;
+  color: white;
+  text-align: center;
+}
 #signupForm button, #loginForm button, .logFormContainer button{
   padding: 8px;
   text-align: center;
-  background-color: #DB4C4D;
+  background-color: #00A388;
   color: white;
 }
 #signupView p, #loginView p{

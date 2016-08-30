@@ -13,7 +13,7 @@
       <input name="person" ng-model='log.user' type="text" placeholder="Person logging...">
       <button>Log</button>
     </form>
-    <form ng-if="logInfoToPop != null" name="logWalkForm" ng-submit='editThis()'>
+    <form ng-if="logInfoToPop !== null" name="logWalkForm" ng-submit='editThis()'>
       <input name="logType" ng-init='log.logType = "logWalk"' type="hidden" value="logWalk">
       <input name="logId" ng-init='log.id = logInfoToPop._id' type="hidden">
       <input name="petname" ng-model='log.petname' type="text" placeholder="Pet Name" ng-value="logInfoToPop.petname">
@@ -24,8 +24,8 @@
       </div>
       <input name="notes" ng-model='log.notes' type="text" placeholder="Notes..." ng-value="logInfoToPop.notes">
       <input name="person" ng-model='log.user' type="text" placeholder="Person logging..." ng-value="logInfoToPop.user">
-      <button>Log</button>
-      <div ng-click="deleteLog(logInfoToPop._id)">Delete</div>
+      <button>Update Log</button>
+      <div class="deleteBtn" ng-click="deleteLog(logInfoToPop._id)">Delete</div>
     </form>
   </div>
 </div>
