@@ -11,6 +11,7 @@ angular.module('app.log', [])
     Log.getLog(logToPopulate)
       .then(function(data){
         $scope.logInfoToPop = data;
+        console.log(data);
       })
       .catch(function(error){
         console.error(error);
@@ -19,6 +20,17 @@ angular.module('app.log', [])
 
   $scope.logThis = function(){
     Log.log($scope.log)
+      .then(function(){
+        $window.localStorage.setItem('logToPopulate', null);
+        $location.path('/home');
+      })
+      .catch(function(error){
+        console.error(error);
+      });
+  };
+
+  $scope.editThis = function(){
+    Log.edit($scope.log)
       .then(function(){
         $window.localStorage.setItem('logToPopulate', null);
         $location.path('/home');

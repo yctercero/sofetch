@@ -7,7 +7,6 @@ var findLog = Q.nbind(Log.findOne, Log);
 
 module.exports = {
   log: function(req, res){
-    console.log(req.body);
     var petname = req.body.petname;
     var time = req.body.time;
     var poop = req.body.poo;
@@ -48,8 +47,6 @@ module.exports = {
   },
 
   editLog: function(req, res){
-    console.log(res.data);
-    console.log(req.params.id);
     findLog({"_id": req.body.id})
       .then(function(log){
         res.json(log);
@@ -57,5 +54,28 @@ module.exports = {
       .catch(function(error){
         res.send(500, err);
       })
+  },
+
+  updateLog: function(req, res){
+    Log.findById(req.body.id, function(err, log){
+      if(err){
+        res.send(err)
+      }
+      log.petname = req.body.petname;
+      log.time = req.body.time;
+      log.poop = req.body.poo;
+      log.pee = req.body.pee;
+      log.notes = req.body.notes;
+      log.user = req.body.user;
+      log.dosage = req.body.dosage;
+      log.medsGiven = req.body.medsGiven;
+
+      log.save(function(err){
+        if(err){
+          res.send(err);
+        }
+        res.json({message: 'Log updated!'});
+      })
+    })
   }
 }

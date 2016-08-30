@@ -38,6 +38,14 @@ angular.module('app.services', [])
     })
   };
 
+  var edit = function(log){
+    return $http({
+      method: 'PUT',
+      url: '/log',
+      data: log
+    })
+  };
+
   var getLogs = function(){
     return $http({
       method: 'GET',
@@ -51,7 +59,7 @@ angular.module('app.services', [])
   var getLog = function(data){
     console.log(data);
     return $http({
-      method: 'GET',
+      method: 'POST',
       url: '/log',
       data: {id: data}
     })
@@ -62,6 +70,7 @@ angular.module('app.services', [])
 
   return {
     log: log,
+    edit: edit,
     getLogs: getLogs,
     getLog: getLog
   }
