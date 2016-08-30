@@ -1,0 +1,24 @@
+.DS_Store
+.AppleDouble
+.LSOverride
+azure.err
+iisnode.yml
+
+# Icon must ends with two \r.
+Icon
+
+# Build files
+public/dist/
+
+# Node modules
+node_modules/
+
+# Thumbnails
+._*
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+node_modules/
+db/
+public/lib
