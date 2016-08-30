@@ -33,6 +33,8 @@ app.get('*', function(req, res) {
 
 app.put('/log', logController.updateLog);
 
+app.delete('/log/:log_id', logController.deleteLog);
+
 app.post('/log', logController.editLog);
 app.post('/users/signup', userController.signup);
 app.post('/users/login', userController.login);

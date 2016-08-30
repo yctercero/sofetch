@@ -25,6 +25,7 @@
       <input name="notes" ng-model='log.notes' type="text" placeholder="Notes..." ng-value="logInfoToPop.notes">
       <input name="person" ng-model='log.user' type="text" placeholder="Person logging..." ng-value="logInfoToPop.user">
       <button>Log</button>
+      <div ng-click="deleteLog(logInfoToPop._id)">Delete</div>
     </form>
   </div>
 </div>

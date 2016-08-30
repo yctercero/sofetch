@@ -39,4 +39,14 @@ angular.module('app.log', [])
         console.error(error);
       });
   };
+
+  $scope.deleteLog = function(log){
+    Log.deleteLog(log)
+      .then(function(){
+        $location.path('/home');
+      })
+      .catch(function(error){
+        console.error(error);
+      });
+  }
 })

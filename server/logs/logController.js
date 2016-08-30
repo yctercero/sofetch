@@ -77,5 +77,17 @@ module.exports = {
         res.json({message: 'Log updated!'});
       })
     })
+  },
+
+  deleteLog: function(req, res){
+    console.log("ID", req.params.log_id);
+    Log.remove({
+          _id: req.params.log_id
+      }, function(err, bear) {
+        if (err)
+            res.send(err);
+
+        res.json({ message: 'Successfully deleted' });
+      });
   }
 }

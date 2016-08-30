@@ -68,10 +68,19 @@ angular.module('app.services', [])
     })
   };
 
+  var deleteLog = function(log){
+    console.log(log);
+    return $http({
+      method: 'DELETE',
+      url: '/log/' + log,
+    })
+  };
+
   return {
     log: log,
     edit: edit,
     getLogs: getLogs,
-    getLog: getLog
+    getLog: getLog,
+    deleteLog: deleteLog
   }
 }])
