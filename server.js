@@ -8,11 +8,19 @@ var multer = require('multer');
 
 var app = express();
 
-var port = process.env.PORT || 8000;
+var port = process.env.PORT || 4568;
 
 app.listen(port);
 
-mongoose.connect('mongodb://localhost/soFetch');
+mongoURI = process.env.MONGODB_URI || 'mongodb://localhost/soFetch';
+mongoose.connect(mongoURI);
+
+//mongoose.connect('mongodb://localhost/soFetch');
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function () {
+ console.log('Mongodb connection open');
+});
 
 app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({extended: true}));
