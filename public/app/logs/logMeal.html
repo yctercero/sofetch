@@ -1,0 +1,13 @@
+<div class="innerWrapper">
+  <div class="logFormContainer">
+    <h3>Log Meal</h3>
+    <form name="logMealForm" ng-submit='logThis()'>
+      <input name="logType" ng-init='log.logType = "logMeal"' type="hidden" value="logMeal">
+      <input name="petname" ng-model='log.petname' type="text" placeholder="Pet Name">
+      <input name="time" ng-model='log.time' type="text" placeholder="Time of feeding...">
+      <input name="notes" ng-model='log.notes' type="text" placeholder="Notes...">
+      <input name="person" ng-model='log.user' type="text" placeholder="Person logging...">
+      <button>Log</button>
+    </form>
+  </div>
+</div>

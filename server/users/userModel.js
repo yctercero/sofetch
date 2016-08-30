@@ -2,6 +2,8 @@ var Q = require('q');
 var mongoose = require('mongoose');
 var SALT_WORK_FACTOR = 10;
 var bcrypt = require('bcrypt-nodejs');
+var Pet = require('../pets/petModel.js');
+var Schema = mongoose.Schema;
 
 var UserSchema = new mongoose.Schema({
   username: {
@@ -12,7 +14,11 @@ var UserSchema = new mongoose.Schema({
   password: {
     type: String,
     required: true
-  }
+  },
+  pets: [{
+    type: Schema.Types.ObjectId,
+    ref: 'Pet'
+  }]
 });
 
 UserSchema.methods.checkPasswords = function (typedPassword) {

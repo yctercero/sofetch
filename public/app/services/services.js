@@ -52,8 +52,8 @@ angular.module('app.services', [])
     console.log(data);
     return $http({
       method: 'GET',
-      url: '/logWalk',
-      data: data
+      url: '/log',
+      data: {id: data}
     })
     .then(function(response){
       return response.data;

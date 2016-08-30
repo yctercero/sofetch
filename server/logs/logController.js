@@ -14,14 +14,20 @@ module.exports = {
     var pee = req.body.pee;
     var notes = req.body.notes;
     var user = req.body.user;
+    var logType = req.body.logType;
+    var dosage = req.body.dosage;
+    var medsGiven = req.body.medsGiven;
 
     var newLog = new Log({
       petname: petname,
       time: time,
       poop: poop,
       pee: pee,
+      dosage: dosage,
+      medsGiven: medsGiven,
       notes: notes,
-      user: user
+      user: user,
+      logType: logType
     });
 
     newLog.save(function(err, newLog){
@@ -42,7 +48,7 @@ module.exports = {
   },
 
   editLog: function(req, res){
-    console.log(req.body.id);
+    console.log(res.data);
     console.log(req.params.id);
     findLog({"_id": req.body.id})
       .then(function(log){

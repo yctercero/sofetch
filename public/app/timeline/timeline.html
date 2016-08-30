@@ -1,15 +1,21 @@
 <div class="innerWrapper">
-  <div class="timelineLog food clearfix" ng-repeat="(index, item) in data.logs">
+  <div class="timelineLog walk clearfix" ng-repeat="(index, item) in data.logs">
     <div>
       <img src="http://blogs-images.forbes.com/kristintablang/files/2016/02/Uber-Puppies.jpg" alt="">
     </div>
     <div>
-      <h4><span editable-text="item.petname">{{item.petname || "Enter Name"}}</span> <i class="fa fa-map-marker" aria-hidden="true"></i>
+      <h4><span editable-text="item.petname">{{item.petname || "Enter Name"}}</span> <i class="fa fa-map-marker" aria-hidden="true" ng-if="item.logType === 'logWalk'"></i><i class="fa fa-cutlery" aria-hidden="true" ng-if="item.logType === 'logMeal'"></i><i class="fa fa-heartbeat" aria-hidden="true" ng-if="item.logType === 'logMeds'"></i>
       </h4>
-      <p>
+      <p ng-if="item.logType === 'logWalk'">
         {{item.petname}} went out and did:
         <span class="icon" ng-if="item.pee === true"><img src="assets/pee.png" alt=""></span>
         <span class="icon" ng-if="item.poop === true"><img src="assets/poo.png" alt=""></span>
+      </p>
+      <p ng-if="item.logType === 'logMeds'">
+        Meds: {{item.medsGiven}}
+      </p>
+      <p ng-if="item.logType === 'logMeds'">
+        Dosage: {{item.dosage}}
       </p>
       <p ng-if="showDetails===true">Notes: {{item.notes}}</p>
       <h6>Posted By: {{item.user}}</h6>
@@ -19,7 +25,11 @@
       <p class="amPM">PM</p>
     </div>
     <div class="aside">
-      <p><i class="fa fa-pencil-square-o" aria-hidden="true" ng-click="getLog($index)"></i></p>
+      <p>
+        <a href="#/logWalk">
+          <i class="fa fa-pencil-square-o" aria-hidden="true" ng-click="getLog(item._id)"></i>
+        </a>
+      </p>
       <p ng-if="item.notes.length"><i class="fa fa-angle-down" aria-hidden="true" ng-click="toggle()"></i></p>
     </div>
 

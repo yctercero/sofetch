@@ -14,8 +14,8 @@
   <body>
     <header  class="clearfix">
       <h1>So<span>Fetch</span></h1>
-      <nav>
-        <ul class="clearfix">
+      <nav ng-controller="AuthController" >
+        <ul class="clearfix" ng-hide="currentPath === '/signup' || currentPath === '/login'">
           <li>Log
             <ul id="logMenu">
               <li>
@@ -25,12 +25,16 @@
                 </a>
               </li>
               <li>
-                <i class="fa fa-cutlery" aria-hidden="true"></i>
-                <h6>Meal</h6>
+                <a href="#/logMeal">
+                  <i class="fa fa-cutlery" aria-hidden="true"></i>
+                  <h6>Meal</h6>
+                </a>
               </li>
               <li>
-                <i class="fa fa-heartbeat" aria-hidden="true"></i>
-                <h6>Meds</h6>
+                <a href="#/logMeds">
+                  <i class="fa fa-heartbeat" aria-hidden="true"></i>
+                  <h6>Meds</h6>
+                </a>
               </li>
               <li>
                 <a href="">
@@ -49,7 +53,7 @@
             <i class="fa fa-paw" aria-hidden="true"></i> Profile
           </li>
           <li>
-            <i class="fa fa-angle-down" aria-hidden="true"></i> username
+            <i class="fa fa-angle-down" aria-hidden="true"></i> {{username}}
           </li>
         </ul>
       </nav>

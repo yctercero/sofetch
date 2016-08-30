@@ -1,0 +1,15 @@
+<div class="innerWrapper">
+  <div class="logFormContainer">
+    <h3>Log Meds</h3>
+    <form name="logMedsForm" ng-submit='logThis()'>
+      <input name="logType" ng-init='log.logType = "logMeds"' type="hidden" value="logMeds">
+      <input name="petname" ng-model='log.petname' type="text" placeholder="Pet Name">
+      <input name="medsGiven" ng-model='log.medsGiven' type="text" placeholder="Medicine given...">
+      <input name="time" ng-model='log.time' type="text" placeholder="Time...">
+      <input name="dosage" ng-model='log.dosage' type="text" placeholder="Dosage...">
+      <input name="notes" ng-model='log.notes' type="text" placeholder="Notes...">
+      <input name="person" ng-model='log.user' type="text" placeholder="Person logging...">
+      <button>Log</button>
+    </form>
+  </div>
+</div>

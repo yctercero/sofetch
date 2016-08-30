@@ -1,10 +1,8 @@
 angular.module('app.timeline', [])
-.controller('TimelineController', ['$scope', 'Log', function($scope, Log){
+.controller('TimelineController', ['$scope', 'Log', '$window', function($scope, Log, $window){
   angular.extend($scope, Log);
 
   $scope.showDetails = false;
-
-
 
   $scope.data = {
     logs: []
@@ -23,9 +21,8 @@ angular.module('app.timeline', [])
   };
 
   $scope.getLog = function(index){
-    $scope.logToFind.id = $scope.data.logs[index]._id;
-    Log.getLog($scope.logToFind);
-  }
+    $window.localStorage.setItem('logToPopulate', index);
+  };
 
   $scope.getLogs = function(){
     Log.getLogs()

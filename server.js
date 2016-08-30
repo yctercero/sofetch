@@ -27,7 +27,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
 app.get('/home', logController.getLogs);
-app.get('/logWalk', logController.editLog);
+app.get('/log', logController.editLog);
 app.get('*', function(req, res) {
   res.sendFile(path.resolve(__dirname + '/public/index.html'));
 });
