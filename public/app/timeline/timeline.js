@@ -1,4 +1,4 @@
-var timeline = angular.module('app.timeline', [])
+angular.module('app.timeline', [])
 .controller('TimelineController', ['$scope', 'Log', function($scope, Log){
   angular.extend($scope, Log);
 
