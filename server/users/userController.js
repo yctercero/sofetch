@@ -11,7 +11,7 @@ module.exports = {
     console.log(password);
     User.findOne({ username: username }).exec(function(err, found){
       if(found){
-        res.send(200, found);
+        res.json({message: "User already exists"});
       }else{
         var newUser = new User({
           username: username,

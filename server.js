@@ -27,9 +27,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
 app.get('/home', logController.getLogs);
-app.get('*', function(req, res) {
-  res.sendFile(path.resolve(__dirname + '/public/index.html'));
-});
+
 
 app.put('/log', logController.updateLog);
 
@@ -39,5 +37,10 @@ app.post('/log', logController.editLog);
 app.post('/users/signup', userController.signup);
 app.post('/users/login', userController.login);
 app.post('/logWalk', logController.log);
+
+
+app.get('*', function(req, res) {
+  res.sendFile(path.resolve(__dirname + '/public/index.html'));
+});
 
 module.exports = app;

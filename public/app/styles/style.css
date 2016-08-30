@@ -79,6 +79,12 @@ header nav > ul > li:first-of-type{
   border-radius: 10px;
   margin-right: 25px;
 }
+header nav > ul > li > ul{
+  display: none;
+}
+header nav > ul > li:hover > ul{
+  display: block;
+}
 main{
   background-color: #eee;
 }
