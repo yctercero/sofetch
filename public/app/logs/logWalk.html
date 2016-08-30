@@ -1,7 +1,7 @@
 <div class="innerWrapper">
   <div class="logFormContainer">
     <h3>Log Walk</h3>
-    <form ng-if="logInfoToPop === null" name="logWalkForm" ng-submit='logThis()'>
+    <form name="logWalkForm" ng-submit='logThis()'>
       <input name="logType" ng-init='log.logType = "logWalk"' type="hidden" value="logWalk">
       <input name="petname" ng-model='log.petname' type="text" placeholder="Pet Name">
       <input name="time" ng-model='log.time' type="text" placeholder="Time of walk...">
@@ -12,20 +12,6 @@
       <input name="notes" ng-model='log.notes' type="text" placeholder="Notes...">
       <input name="person" ng-model='log.user' type="text" placeholder="Person logging...">
       <button>Log</button>
-    </form>
-    <form ng-if="logInfoToPop !== null" name="logWalkForm" ng-submit='editThis()'>
-      <input name="logType" ng-init='log.logType = "logWalk"' type="hidden" value="logWalk">
-      <input name="logId" ng-init='log.id = logInfoToPop._id' type="hidden">
-      <input name="petname" ng-model='log.petname' type="text" placeholder="Pet Name" ng-value="logInfoToPop.petname">
-      <input name="time" ng-model='log.time' type="text" placeholder="Time of walk..." ng-value="logInfoToPop.time">
-      <div class="checkboxes">
-        <input type="checkbox" name="poo" value="Poo" ng-model='log.poo' ng-checked="logInfoToPop.poop">Poo
-        <input type="checkbox" name="pee" value="Pee" ng-model='log.pee' ng-checked="logInfoToPop.pee">Pee
-      </div>
-      <input name="notes" ng-model='log.notes' type="text" placeholder="Notes..." ng-value="logInfoToPop.notes">
-      <input name="person" ng-model='log.user' type="text" placeholder="Person logging..." ng-value="logInfoToPop.user">
-      <button>Update Log</button>
-      <div class="deleteBtn" ng-click="deleteLog(logInfoToPop._id)">Delete</div>
     </form>
   </div>
 </div>

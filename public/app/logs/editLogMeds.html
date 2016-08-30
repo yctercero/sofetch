@@ -1,0 +1,17 @@
+<div class="innerWrapper">
+  <div class="logFormContainer">
+    <h3>Log Meds</h3>
+    <form ng-if="logInfoToPop !== null" name="logMedsForm" ng-submit='logThis()'>
+      <input name="logType" ng-init='log.logType = "logMeds"' type="hidden" value="logMeds">
+      <input name="logId" ng-init='log.id = logInfoToPop._id' type="hidden">
+      <input name="petname" ng-model='log.petname' type="text" placeholder="Pet Name" ng-value="logInfoToPop.petname">
+      <input name="medsGiven" ng-model='log.medsGiven' type="text" placeholder="Medicine given..." ng-value="logInfoToPop.medsGiven">
+      <input name="time" ng-model='log.time' type="text" placeholder="Time..."  ng-value="logInfoToPop.time">
+      <input name="dosage" ng-model='log.dosage' type="text" placeholder="Dosage..." ng-value="logInfoToPop.dosage">
+      <input name="notes" ng-model='log.notes' type="text" placeholder="Notes..." ng-value="logInfoToPop.notes">
+      <input name="person" ng-model='log.user' type="text" placeholder="Person logging..." ng-value="logInfoToPop.user">
+      <button>Update Log</button>
+      <div class="deleteBtn" ng-click="deleteLog(logInfoToPop._id)">Delete</div>
+    </form>
+  </div>
+</div>

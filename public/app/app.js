@@ -38,6 +38,21 @@ angular.module('app', [
     url: '/logMeds',
     templateUrl: 'app/logs/logMeds.html',
     controller: 'LogController'
+  })
+  .state('editLogMeds', {
+    url: '/editLogMeds',
+    templateUrl: 'app/logs/editLogMeds.html',
+    controller: 'LogController'
+  })
+  .state('editLogWalk', {
+    url: '/editLogWalk',
+    templateUrl: 'app/logs/editLogWalk.html',
+    controller: 'LogController'
+  })
+  .state('editLogMeal', {
+    url: '/editLogMeal',
+    templateUrl: 'app/logs/editLogMeal.html',
+    controller: 'LogController'
   });
 
 })

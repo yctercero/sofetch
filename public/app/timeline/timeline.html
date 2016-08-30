@@ -26,7 +26,13 @@
     </div>
     <div class="aside">
       <p>
-        <a href="#/logWalk">
+        <a href="#/editLogWalk" ng-if="item.logType === 'logWalk'">
+          <i class="fa fa-pencil-square-o" aria-hidden="true" ng-click="getLog(item._id)"></i>
+        </a>
+        <a href="#/editLogMeds" ng-if="item.logType === 'logMeds'">
+          <i class="fa fa-pencil-square-o" aria-hidden="true" ng-click="getLog(item._id)"></i>
+        </a>
+        <a href="#/editLogMeal" ng-if="item.logType === 'logMeal'">
           <i class="fa fa-pencil-square-o" aria-hidden="true" ng-click="getLog(item._id)"></i>
         </a>
       </p>
