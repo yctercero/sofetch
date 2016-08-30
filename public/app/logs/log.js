@@ -43,6 +43,7 @@ angular.module('app.log', [])
   $scope.deleteLog = function(log){
     Log.deleteLog(log)
       .then(function(){
+        $window.localStorage.setItem('logToPopulate', null);
         $location.path('/home');
       })
       .catch(function(error){

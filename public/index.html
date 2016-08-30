@@ -12,9 +12,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js"></script>
   </head>
   <body>
-    <header  class="clearfix">
-      <h1>So<span>Fetch</span></h1>
-      <nav ng-controller="AuthController" >
+    <header class="clearfix" ng-controller="AuthController">
+      <h1 ng-hide="currentPath === '/signup' || currentPath === '/login'">
+        <a href="'#/home">
+          So<span>Fetch</span>
+        </a>
+      </h1>
+      <h1 ng-show="currentPath === '/signup' || currentPath === '/login'">
+        So<span>Fetch</span>
+      </h1>
+      <nav  >
         <ul class="clearfix" ng-hide="currentPath === '/signup' || currentPath === '/login'">
           <li>Log
             <ul id="logMenu">
