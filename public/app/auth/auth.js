@@ -1,5 +1,5 @@
 angular.module('app.auth', [])
-.controller('AuthController', function($scope, $location, Auth){
+.controller('AuthController',['$scope', '$location', 'Auth', function($scope, $location, Auth){
   angular.extend($scope, Auth);
 
   //trying to figure way to store username to use throughout app for personalization
@@ -26,4 +26,4 @@ angular.module('app.auth', [])
         console.error(error);
       });
   };
-});
+}]);

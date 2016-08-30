@@ -1,5 +1,5 @@
 angular.module('app.services', [])
-.factory('Auth', function($http, $location){
+.factory('Auth', ['$http', '$location', function($http, $location){
   var signup = function(user){
     return $http({
       method: 'POST',
@@ -28,8 +28,8 @@ angular.module('app.services', [])
     login: login,
     user: userData
   };
-})
-.factory('Log', function($http, $location){
+}])
+.factory('Log', ['$http', '$location', function($http, $location){
   var log = function(log){
     return $http({
       method: 'POST',
@@ -65,4 +65,4 @@ angular.module('app.services', [])
     getLogs: getLogs,
     getLog: getLog
   }
-})
+}])

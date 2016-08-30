@@ -1,5 +1,5 @@
 angular.module('app.timeline', [])
-.controller('TimelineController', function($scope, Log){
+.controller('TimelineController', ['$scope', 'Log', function($scope, Log){
   angular.extend($scope, Log);
 
   $scope.showDetails = false;
@@ -39,4 +39,4 @@ angular.module('app.timeline', [])
   };
 
   $scope.getLogs();
-})
+}]);
