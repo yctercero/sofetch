@@ -3,6 +3,7 @@ angular.module('app', [
   'app.auth',
   'app.services',
   'app.timeline',
+  'app.profile',
   'app.log'
 ])
 .config(function($stateProvider, $urlRouterProvider){
@@ -53,6 +54,11 @@ angular.module('app', [
     url: '/editLogMeal',
     templateUrl: 'app/logs/editLogMeal.html',
     controller: 'LogController'
+  })
+  .state('profile', {
+    url: '/profile',
+    templateUrl: 'app/profile/profile.html',
+    controller: 'ProfileController'
   });
 
 });

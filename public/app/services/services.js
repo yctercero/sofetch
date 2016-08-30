@@ -21,7 +21,7 @@ angular.module('app.services', [])
       username: user.username
     }
     return user;
-  }
+  };
 
   return {
     signup: signup,

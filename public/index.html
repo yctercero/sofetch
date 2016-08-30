@@ -63,15 +63,21 @@
             <i class="fa fa-angle-down" aria-hidden="true"></i> {{username}}
             <ul>
               <li>
-                <i class="fa fa-user" aria-hidden="true"></i>
-                Profile
+                <a href="#/profile">
+                  <i class="fa fa-user" aria-hidden="true"></i>
+                  Profile
+                </a>
               </li>
               <li>
-                <i class="fa fa-cog" aria-hidden="true"></i> Settings
+                <a href="#">
+                  <i class="fa fa-cog" aria-hidden="true"></i> Settings
+                </a>
               </li>
               <li>
-                <i class="fa fa-sign-out" aria-hidden="true"></i>
-                Logout
+                <a href="#/login">
+                  <i class="fa fa-sign-out" aria-hidden="true"></i>
+                  Logout
+                </a>
               </li>
             </ul>
           </li>
@@ -86,6 +92,7 @@
     <script src="app/services/services.js"></script>
     <script src="app/timeline/timeline.js"></script>
     <script src="app/logs/log.js"></script>
+    <script src="app/profile/profile.js"></script>
     <script src="app/app.js"></script>
   </body>
 </html>

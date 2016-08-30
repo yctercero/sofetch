@@ -65,16 +65,30 @@ header nav > ul > li{
   text-align: center;
   padding: 10px;
 }
+header nav > ul > li:hover > i, header nav > ul > li:hover > a >i{
+  color: #DB4C4D;
+}
 header nav > ul > li:last-of-type > ul{
   float: none;
   padding: 10px;
   position: absolute;
   background-color: #1C2240;
   top: 36px;
+  width: 100%;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border: 1px solid #1C2240;
 }
 header nav > ul > li:last-of-type > ul > li{
   float: none;
   padding: 10px;
+  text-align: left;
+}
+header nav > ul > li:last-of-type > ul > li:hover a{
+  color: #1C2240;
+}
+header nav > ul > li:last-of-type > ul > li:hover{
+  background-color: white;
 }
 header nav > ul > li a{
   color: white;
@@ -218,7 +232,7 @@ main{
   letter-spacing: 2px;
 }
 #logMenu{
-  width: 200px;
+  width: 250px;
   position: absolute;
   background-color: rgba(255, 255, 255, 0.85);
   border-radius: 10px;
@@ -227,13 +241,16 @@ main{
 }
 header nav > ul > li:first-of-type:hover #logMenu{
   display: block;
-      top: 42px;
+      top: 40px;
     left: -24px;
 }
 #logMenu li{
   width: 50%;
   text-align: center;
   margin: 10px 0;
+}
+#logMenu li:hover i{
+  color: #DB4C4D;
 }
 #logMenu i{
   color: #00A388;
@@ -254,4 +271,33 @@ header nav > ul > li:first-of-type:hover #logMenu{
 .aside i{
   font-size: 26px;
   padding: 10px;
+  color: #00A388;
+}
+.profileWrapper{
+  width: 1000px;
+  margin: 0 auto;
+  padding: 30px;
+}
+.profileWrapper > section{
+  float: left;
+}
+.human{
+  width: 35%;
+}
+.human img{
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto;
+}
+.petslist{
+  width: 65%;
+}
+.petslist .addPet{
+  text-align: center;
+  padding: 10px;
+  background-color: #00A388;
+  color: white;
+  border-radius: 5px;
 }
