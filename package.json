@@ -19,7 +19,8 @@
     "url": "https://github.com/yctercero/sofetch.git"
   },
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "postinstall": "bower install && gulp build"
   },
   "dependencies": {
     "angular": "^1.5.8",
