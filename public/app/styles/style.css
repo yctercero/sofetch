@@ -112,6 +112,7 @@ header nav > ul > li:hover > ul{
 }
 main{
   background-color: #eee;
+  padding: 30px;
 }
 #signup, #login{
   background-image: url(/../assets/signupbg.jpeg);

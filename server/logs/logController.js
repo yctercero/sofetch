@@ -61,20 +61,22 @@ module.exports = {
       if(err){
         res.send(err)
       }else{
-        log.petname = req.body.petname;
-        log.time = req.body.time;
-        log.poop = req.body.poo;
-        log.pee = req.body.pee;
-        log.notes = req.body.notes;
-        log.user = req.body.user;
-        log.dosage = req.body.dosage;
-        log.medsGiven = req.body.medsGiven;
-
+        console.log(log);
+        log.petname = req.body.petname || log.petname;
+        log.time = req.body.time || log.time;
+        log.poop = req.body.poo || log.poop;
+        log.pee = req.body.pee || log.pee;
+        log.notes = req.body.notes || log.notes;
+        log.user = req.body.user || log.user;
+        log.dosage = req.body.dosage || log.dosage;
+        log.medsGiven = req.body.medsGiven || log.medsGiven;
+        console.log(log);
         log.save(function(err){
           if(err){
             res.send(err);
+          }else{
+            res.json({message: 'Log updated!'});
           }
-          res.json({message: 'Log updated!'});
         })
       }
     })
@@ -85,10 +87,11 @@ module.exports = {
     Log.remove({
           _id: req.params.log_id
       }, function(err, bear) {
-        if (err)
-            res.send(err);
-
-        res.json({ message: 'Successfully deleted' });
+        if (err){
+          res.send(err);
+        }else{
+          res.json({ message: 'Successfully deleted' });
+        }
       });
   }
 }

@@ -5,6 +5,8 @@ angular.module('app.auth', [])
   //trying to figure way to store username to use throughout app for personalization
   $scope.username = "Hello";
 
+  $scope.hgt = { 'min-height': ($window.innerHeight) + 'px' };
+
   $scope.currentPath = $location.path();
 
   $scope.user = {};

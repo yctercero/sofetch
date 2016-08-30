@@ -11,8 +11,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js"></script>
   </head>
-  <body>
-    <header class="clearfix" ng-controller="AuthController">
+  <body ng-controller="AuthController">
+    <header class="clearfix">
       <h1 ng-hide="currentPath === '/signup' || currentPath === '/login'">
         <a href="#/home" ng-click="clear()">
           So<span>Fetch</span>
@@ -84,7 +84,7 @@
         </ul>
       </nav>
     </header>
-    <main ui-view>
+    <main ng-style="hgt" ui-view>
 
     </main>
     <footer></footer>
