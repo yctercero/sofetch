@@ -1,7 +1,7 @@
 <div class="innerWrapper">
   <div class="timelineLog walk clearfix" ng-repeat="(index, item) in data.logs">
     <div>
-      <img src="assets/roo.jpg" alt="">
+      <img src="assets/roo.JPG" alt="">
     </div>
     <div>
       <h4><span editable-text="item.petname">{{item.petname || "Enter Name"}}</span> <i class="fa fa-map-marker" aria-hidden="true" ng-if="item.logType === 'logWalk'"></i><i class="fa fa-cutlery" aria-hidden="true" ng-if="item.logType === 'logMeal'"></i><i class="fa fa-heartbeat" aria-hidden="true" ng-if="item.logType === 'logMeds'"></i>
