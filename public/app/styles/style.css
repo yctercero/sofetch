@@ -33,7 +33,7 @@ h1, h1 a{
   text-transform: uppercase;
   font-weight: 600;
   color: white;
-  padding: 15px;
+  padding: 15px 15px 15px 35px;
 }
 h1 span{
   font-weight: lighter;
@@ -209,9 +209,11 @@ main{
   margin: 8px 0;
   font-weight: lighter;
   font-family: 'Open Sans', sans-serif;
+  color: #aaa;
 }
 .timelineLog p{
   font-size: 20px;
+  margin: 5px 0;
 }
 .timelineLog img{
   width: 75px;
@@ -301,4 +303,7 @@ header nav > ul > li:first-of-type:hover #logMenu{
   background-color: #00A388;
   color: white;
   border-radius: 5px;
+}
+.timelineBold{
+  font-weight: 600;
 }

@@ -8,16 +8,25 @@
       </h4>
       <p ng-if="item.logType === 'logWalk'">
         {{item.petname}} went out and did:
-        <span class="icon" ng-if="item.pee === true"><img src="assets/pee.png" alt=""></span>
-        <span class="icon" ng-if="item.poop === true"><img src="assets/poo.png" alt=""></span>
+        <p ng-if="item.logType === 'logWalk'">
+          <span class="icon" ng-if="item.pee === true"><img src="assets/pee.png" alt=""></span>
+          <span class="icon" ng-if="!item.pee"><img src="assets/nopee.png" alt=""></span>
+          <span class="icon" ng-if="item.poop === true"><img src="assets/poo.png" alt=""></span>
+          <span class="icon" ng-if="!item.poop"><img src="assets/nopoo.png" alt=""></span>
+        </p>
       </p>
       <p ng-if="item.logType === 'logMeds'">
-        Meds: {{item.medsGiven}}
+        <span class="timelineBold">Meds:</span> {{item.medsGiven}}
       </p>
-      <p ng-if="item.logType === 'logMeds'">
-        Dosage: {{item.dosage}}
+      <p ng-if="item.logType === 'logMeds'&& item.dosage.length">
+        <span class="timelineBold">Dose:</span> {{item.dosage}}
       </p>
-      <p ng-if="showDetails===true">Notes: {{item.notes}}</p>
+      <p ng-if="showDetails===true">
+        <span class="timelineBold">Notes:</span> {{item.notes}}
+      </p>
+      <p ng-if="item.logType === 'logMeal'">
+        {{item.petname}} was fed.
+      </p>
       <h6>Posted By: {{item.user}}</h6>
     </div>
     <div class="time">

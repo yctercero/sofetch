@@ -32,6 +32,8 @@ module.exports = {
     newLog.save(function(err, newLog){
       if(err){
         res.send(500, err);
+      }else{
+        res.json({message: 'Log logged!'});
       }
     })
   },
@@ -64,8 +66,8 @@ module.exports = {
         console.log(log);
         log.petname = req.body.petname || log.petname;
         log.time = req.body.time || log.time;
-        log.poop = req.body.poo || log.poop;
-        log.pee = req.body.pee || log.pee;
+        log.poop = req.body.poo || false;
+        log.pee = req.body.pee || false;
         log.notes = req.body.notes || log.notes;
         log.user = req.body.user || log.user;
         log.dosage = req.body.dosage || log.dosage;
