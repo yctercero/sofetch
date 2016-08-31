@@ -31,7 +31,8 @@
     </div>
     <div class="time">
       <p>{{item.time}}</p>
-      <p class="amPM">PM</p>
+      <p  ng-if="item.pm === true" class="amPM">PM</p>
+      <p  ng-if="item.am === true" class="amPM">AM</p>
     </div>
     <div class="aside">
       <p>

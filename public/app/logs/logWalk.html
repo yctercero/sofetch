@@ -4,7 +4,13 @@
     <form name="logWalkForm" ng-submit='logThis()'>
       <input name="logType" ng-init='log.logType = "logWalk"' type="hidden" value="logWalk">
       <input name="petname" ng-model='log.petname' type="text" placeholder="Pet Name">
-      <input name="time" ng-model='log.time' type="text" placeholder="Time of walk...">
+      <div class="timeCheckboxes clearfix">
+        <input name="time" ng-model='log.time' type="text" placeholder="Time of walk...">
+        <div class="clearfix">
+          <input type="checkbox" name="am" value="AM" ng-model='log.am'>AM
+          <input type="checkbox" name="pm" value="PM" ng-model='log.pm'>PM
+        </div>
+      </div>
       <div class="checkboxes">
         <input type="checkbox" name="poo" value="Poo" ng-model='log.poo'>Poo
         <input type="checkbox" name="pee" value="Pee" ng-model='log.pee'>Pee

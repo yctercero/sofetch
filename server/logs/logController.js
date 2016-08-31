@@ -16,6 +16,8 @@ module.exports = {
     var logType = req.body.logType;
     var dosage = req.body.dosage;
     var medsGiven = req.body.medsGiven;
+    var am = req.body.am;
+    var pm = req.body.pm;
 
     var newLog = new Log({
       petname: petname,
@@ -24,6 +26,8 @@ module.exports = {
       pee: pee,
       dosage: dosage,
       medsGiven: medsGiven,
+      am: am,
+      pm: pm,
       notes: notes,
       user: user,
       logType: logType

@@ -19,6 +19,8 @@ var LogSchema = new mongoose.Schema({
   time: String,
   poop: Boolean,
   pee: Boolean,
+  am: Boolean,
+  pm: Boolean,
   dosage: String,
   medsGiven: String,
   notes: String,
