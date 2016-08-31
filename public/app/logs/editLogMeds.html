@@ -5,7 +5,13 @@
       <input name="logType" ng-init='log.logType = "logMeds"' type="hidden" value="logMeds">
       <input name="petname" ng-model='log.petname' type="text" placeholder="Pet Name" ng-value="logInfoToPop.petname">
       <input name="medsGiven" ng-model='log.medsGiven' type="text" placeholder="Medicine given..." ng-value="logInfoToPop.medsGiven">
-      <input name="time" ng-model='log.time' type="text" placeholder="Time..."  ng-value="logInfoToPop.time">
+      <div class="timeCheckboxes clearfix">
+        <input name="time" ng-model='log.time' type="text" placeholder="Time (00:00)" ng-value="logInfoToPop.time">
+        <div class="clearfix">
+          <input type="checkbox" name="am" value="AM" ng-model='log.am' ng-checked="logInfoToPop.am">AM
+          <input type="checkbox" name="pm" value="PM" ng-model='log.pm' ng-checked="logInfoToPop.pm">PM
+        </div>
+      </div>
       <input name="dosage" ng-model='log.dosage' type="text" placeholder="Dosage..." ng-value="logInfoToPop.dosage">
       <input name="notes" ng-model='log.notes' type="text" placeholder="Notes..." ng-value="logInfoToPop.notes">
       <input name="person" ng-model='log.user' type="text" placeholder="Person logging..." ng-value="logInfoToPop.user">

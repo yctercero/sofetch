@@ -4,7 +4,13 @@
     <form name="logMealForm" ng-submit='editThis()'>
       <input name="logType" ng-init='log.logType = "logMeal"' type="hidden" value="logMeal">
       <input name="petname" ng-model='log.petname' type="text" placeholder="Pet Name" ng-value="logInfoToPop.petname">
-      <input name="time" ng-model='log.time' type="text" placeholder="Time of feeding..." ng-value="logInfoToPop.time">
+      <div class="timeCheckboxes clearfix">
+        <input name="time" ng-model='log.time' type="text" placeholder="Time (00:00)" ng-value="logInfoToPop.time">
+        <div class="clearfix">
+          <input type="checkbox" name="am" value="AM" ng-model='log.am' ng-checked="logInfoToPop.am">AM
+          <input type="checkbox" name="pm" value="PM" ng-model='log.pm' ng-checked="logInfoToPop.pm">PM
+        </div>
+      </div>
       <input name="notes" ng-model='log.notes' type="text" placeholder="Notes..." ng-value="logInfoToPop.notes">
       <input name="person" ng-model='log.user' type="text" placeholder="Person logging..." ng-value="logInfoToPop.user">
       <button>Update Log</button>
