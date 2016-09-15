@@ -1,4 +1,3 @@
-var bluebird = require('bluebird');
 var mongoose = require('mongoose');
 var User = require('../users/userModel.js');
 var Schema = mongoose.Schema;

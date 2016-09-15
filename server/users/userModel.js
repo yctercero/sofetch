@@ -6,6 +6,8 @@ var Pet = require('../pets/petModel.js');
 var Schema = mongoose.Schema;
 
 var UserSchema = new mongoose.Schema({
+  first: String,
+  last: String,
   username: {
     type: String,
     required: true,
@@ -14,11 +16,7 @@ var UserSchema = new mongoose.Schema({
   password: {
     type: String,
     required: true
-  },
-  pets: [{
-    type: Schema.Types.ObjectId,
-    ref: 'Pet'
-  }]
+  }
 });
 
 UserSchema.methods.checkPasswords = function (typedPassword) {
@@ -62,4 +60,4 @@ UserSchema.pre('save', function (next) {
   });
 });
 
-module.exports = mongoose.model('users', UserSchema);
+module.exports = mongoose.model('User', UserSchema);
