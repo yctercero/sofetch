@@ -4,11 +4,16 @@ var User = require('../users/userModel.js');
 var Schema = mongoose.Schema;
 
 var PetSchema = new mongoose.Schema({
-  petname: {
-    type: String,
-    required: true
-  },
+  name: String,
+  vetName: String,
+  vetAddress: String,
+  vetPhone: String,
+  allergies: String,
+  medications: String,
+  microchip: String,
   notes: String,
+  ownerPhone: String,
+  ownerId: Number,
   users: [{
     type: Schema.Types.ObjectId,
     ref: 'User'
