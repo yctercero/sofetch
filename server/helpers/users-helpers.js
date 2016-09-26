@@ -1,7 +1,7 @@
 const session = require('../config.js');
 
 module.exports = {
-    findByUsername: function(username, cb){
+    findByUsernamePassword: function(username, password, cb){
         session
             .run(`MATCH (n:User ) WHERE n.username = "${username}" RETURN n`)
             .then(function(result){
@@ -10,7 +10,8 @@ module.exports = {
                     console.log("USER ALREADY EXISTS")
                     return cb(null, result)
                 }else{
-                    return cb(null, null);
+                    console.log("IM HERE1", cb);
+                    return cb(false, false);
                 }
                 
             })

@@ -26,10 +26,10 @@ app.use(bodyParser.json());
 //=========== passport ================
 require('./server/passport/passport')(passport); // pass passport for configuration
 
-app.use(session({ secret: 'dogpawpuppytreatsfluffandtuff' }));
+// app.use(session({ secret: 'dogpawpuppytreatsfluffandtuff' }));
 app.use(passport.initialize());
 // // persistent login sessions
-app.use(passport.session());
+// app.use(passport.session());
 // // use flash messages
 app.use(flash());
 
