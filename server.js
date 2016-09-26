@@ -1,46 +1,53 @@
-var express = require('express');
-var mongoose = require('mongoose');
-var bodyParser = require('body-parser');
-var userController = require('./server/users/userController.js');
-var logController = require('./server/logs/logController.js');
-var path = require('path');
-var multer = require('multer');
 
-var app = express();
+//============ set up ================
+const express = require('express');
+const app = express();
+const port = process.env.PORT || 3000;
+const mongoose = require('mongoose');
+const passport = require('passport');
+const flash = require('connect-flash');
 
-var port = process.env.PORT || 4568;
+const bodyParser = require('body-parser');
+const morgan = require('morgan');
+const cookieParser = require('cookie-parser');
+const session = require('express-session');
+const path = require('path');
+const multer = require('multer');
 
-app.listen(port);
-
-mongoURI = process.env.MONGODB_URI || 'mongodb://localhost/soFetch';
-mongoose.connect(mongoURI);
-
-//mongoose.connect('mongodb://localhost/soFetch');
-var db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function () {
- console.log('Mongodb connection open');
-});
-
+//========== config ==================
 app.use(express.static(__dirname + '/public'));
+app.use(morgan('dev'));
+app.use(cookieParser());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
-app.get('/home', logController.getLogs);
 
 
-app.put('/log', logController.updateLog);
+//=========== passport ================
+require('./server/passport/passport')(passport); // pass passport for configuration
 
-app.delete('/log/:log_id', logController.deleteLog);
+app.use(session({ secret: 'dogpawpuppytreatsfluffandtuff' }));
+app.use(passport.initialize());
+// // persistent login sessions
+app.use(passport.session());
+// // use flash messages
+app.use(flash());
 
-app.post('/log', logController.editLog);
-app.post('/users/signup', userController.signup);
-app.post('/users/login', userController.login);
-app.post('/logWalk', logController.log);
+//========== routes ==================
+require('./server/routes/routes.js')(app, passport); // load routes 
+// route middleware to make sure a user is logged in
+function isLoggedIn(req, res, next) {
 
+    // if user is authenticated in the session, carry on 
+    if (req.isAuthenticated())
+        return next();
 
-app.get('*', function(req, res) {
-  res.sendFile(path.resolve(__dirname + '/public/index.html'));
-});
+    // if they aren't redirect them to the home page
+    res.redirect('/');
+}
+
+//=========== launch ===============
+app.listen(port);
+console.log('SoFetch listening on port ' + port);
 
 module.exports = app;
